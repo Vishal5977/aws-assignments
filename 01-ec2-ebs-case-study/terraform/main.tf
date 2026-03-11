@@ -69,10 +69,9 @@ resource "aws_security_group" "web_sg" {
 
   tags = { Name = "${var.project_name}-web-sg" }
 }
-
 # ══════════════════════════════════════════════════════════════════════════════
 # TASK 1 — EC2 Instance in US-East-1 with Linux
-# ══════════════════════════════════════════════════════════════════════════════
+#══════════════════════════════════════════════════════════════════════════════
 
 data "aws_ami" "amazon_linux_2" {
   provider    = aws.us_east_1
@@ -199,3 +198,6 @@ resource "aws_ebs_snapshot" "volume_a_snapshot" {
 
   depends_on = [aws_volume_attachment.volume_a_attach]
 }
+
+
+#This is the last line 
