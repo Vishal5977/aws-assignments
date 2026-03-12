@@ -12,9 +12,7 @@ provider "aws" {
   region = var.aws_region
 }
 
-# ══════════════════════════════════════════════════════════════════════════════
 # NETWORKING
-# ══════════════════════════════════════════════════════════════════════════════
 
 data "aws_vpc" "default" { default = true }
 
@@ -25,7 +23,7 @@ data "aws_subnets" "default" {
   }
 }
 
-# ── Security Group — EC2 instances ────────────────────────────────────────────
+#Security Group - EC2 instances
 resource "aws_security_group" "ec2_sg" {
   name        = "${var.project_name}-ec2-sg"
   description = "Allow SSH inbound and all outbound"
@@ -45,7 +43,7 @@ resource "aws_security_group" "ec2_sg" {
   tags = { Name = "${var.project_name}-ec2-sg" }
 }
 
-# ── Security Group — EFS mount target ─────────────────────────────────────────
+#Security Group — EFS mount target
 resource "aws_security_group" "efs_sg" {
   name        = "${var.project_name}-efs-sg"
   description = "Allow NFS traffic from EC2 instances"
@@ -65,9 +63,7 @@ resource "aws_security_group" "efs_sg" {
   tags = { Name = "${var.project_name}-efs-sg" }
 }
 
-# ══════════════════════════════════════════════════════════════════════════════
-# EFS — Elastic File System (shared across all 3 instances)
-# ══════════════════════════════════════════════════════════════════════════════
+#Security group — Elastic File System (shared across all 3 instances)
 
 resource "aws_efs_file_system" "shared_fs" {
   creation_token   = "${var.project_name}-shared-efs"
@@ -84,9 +80,9 @@ resource "aws_efs_mount_target" "efs_mount" {
   security_groups = [aws_security_group.efs_sg.id]
 }
 
-# ══════════════════════════════════════════════════════════════════════════════
+
 # AMI DATA SOURCES — 3 different operating systems
-# ══════════════════════════════════════════════════════════════════════════════
+
 
 # Amazon Linux 2
 data "aws_ami" "amazon_linux_2" {
@@ -112,9 +108,8 @@ data "aws_ami" "rhel_9" {
   filter { name = "virtualization-type"; values = ["hvm"] }
 }
 
-# ══════════════════════════════════════════════════════════════════════════════
 # EC2 INSTANCES — one per OS
-# ══════════════════════════════════════════════════════════════════════════════
+
 
 # Instance 1 — Amazon Linux 2
 resource "aws_instance" "amazon_linux" {
