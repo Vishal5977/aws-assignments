@@ -1,0 +1,19 @@
+# Terraform
+**/.terraform/
+**/*.tfstate
+**/*.tfstate.backup
+**/*.tfvars
+**/.terraform.lock.hcl
+
+# Credentials — never commit
+*.pem
+*.key
+secrets.txt
+credentials
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
