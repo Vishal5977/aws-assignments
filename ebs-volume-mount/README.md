@@ -118,6 +118,7 @@ lsblk
 - Linux commands: `lsblk`, `df`, `mkfs`, `mount`, `umount`
 
 ---
+<img width="938" height="394" alt="image" src="https://github.com/user-attachments/assets/cd184d88-a294-4640-8bfa-37a088f23865" />
 
 <img width="977" height="733" alt="image" src="https://github.com/user-attachments/assets/222d605a-2882-44d0-952a-c33d0a72cdfc" />
 
