@@ -119,4 +119,6 @@ lsblk
 
 ---
 
+<img width="977" height="733" alt="image" src="https://github.com/user-attachments/assets/222d605a-2882-44d0-952a-c33d0a72cdfc" />
+
 *Assignment completed as part of AWS/DevOps hands-on training.*
