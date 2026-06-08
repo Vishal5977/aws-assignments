@@ -157,6 +157,9 @@ Go to **ASG → Integrations tab** — confirm:
 ### 6. EC2 Console — ASG-managed instances Running alongside other instances
 ![EC2 Console](screenshots/screenshot_06.png)
 
+### 7. CloudWatch Monitoring — All 5 Instances Metrics (CPU, Network In/Out, CPU Credits)
+![CloudWatch Metrics](screenshots/screenshot_07_cloudwatch_monitoring.png)
+
 ---
 
 ## Key Learnings
